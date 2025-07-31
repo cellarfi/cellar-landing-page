@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Link } from "wouter";
-import { ArrowLeft, Download, Smartphone, Shield, Zap, Users, CheckCircle, Star, FileDown, Calendar, Info } from "lucide-react";
+import { ArrowLeft, Download, Smartphone, Shield, Zap, Users, CheckCircle, Star, FileDown, Calendar, Info, Home, Plus, Share } from "lucide-react";
 import { motion } from "framer-motion";
 import { useToast } from "@/hooks/use-toast";
 import PhoneMockup from "@/components/phone-mockup";
+import homeScreenImage from "@assets/image_1753983161645.png";
 
 export default function DownloadPage() {
   const [email, setEmail] = useState("");
@@ -23,7 +24,7 @@ export default function DownloadPage() {
         "Bug fixes and performance improvements",
         "New trending tokens widget"
       ],
-      downloadUrl: "#", // Replace with actual APK URL
+      downloadUrl: "/downloads/cellar-1.2.0.apk",
       isRecommended: true
     },
     {
@@ -38,7 +39,7 @@ export default function DownloadPage() {
         "Experimental NFT gallery",
         "Performance optimizations"
       ],
-      downloadUrl: "#", // Replace with actual APK URL
+      downloadUrl: "/downloads/cellar-1.3.0-beta.apk",
       isRecommended: false
     },
     {
@@ -53,7 +54,7 @@ export default function DownloadPage() {
         "Email authentication",
         "Initial Solana integration"
       ],
-      downloadUrl: "#", // Replace with actual APK URL
+      downloadUrl: "/downloads/cellar-1.1.5.apk",
       isRecommended: false
     }
   ];
@@ -61,7 +62,14 @@ export default function DownloadPage() {
   const handleDownload = (versionId: string) => {
     const version = versions.find(v => v.id === versionId);
     if (version) {
-      // In a real app, this would trigger the actual download
+      // Create a temporary link element to trigger download
+      const link = document.createElement('a');
+      link.href = version.downloadUrl;
+      link.download = `cellar-${version.version}.apk`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
       toast({
         title: "Download Started!",
         description: `Downloading Cellar ${version.version} (${version.size})`,
@@ -110,19 +118,22 @@ export default function DownloadPage() {
       name: "Alex Chen",
       role: "DeFi Trader",
       comment: "Finally, a wallet that doesn't make me worry about losing my seed phrase!",
-      rating: 5
+      rating: 5,
+      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
     },
     {
       name: "Sarah Kumar",
       role: "Crypto Investor", 
       comment: "The social features help me discover tokens before they moon.",
-      rating: 5
+      rating: 5,
+      avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face"
     },
     {
       name: "Miguel Santos",
       role: "NFT Collector",
       comment: "Smooth, fast, and secure. Everything I need in a Solana wallet.",
-      rating: 5
+      rating: 5,
+      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
     }
   ];
 
@@ -418,6 +429,132 @@ export default function DownloadPage() {
         </div>
       </section>
 
+      {/* DApp Shortcut Feature */}
+      <section className="py-20 bg-gradient-to-r from-cellar-navy to-cellar-navy-light">
+        <div className="container mx-auto px-6">
+          <motion.h2 
+            className="text-3xl md:text-4xl font-bold text-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            Native App Experience
+          </motion.h2>
+          
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-2xl font-bold mb-6">Add to Home Screen for Instant Access</h3>
+              <p className="text-lg text-gray-300 mb-8">
+                Create a native app-like experience by adding Cellar directly to your home screen. 
+                Access your wallet instantly without opening a browser.
+              </p>
+              
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4">
+                  <div className="w-8 h-8 bg-cellar-cyan rounded-full flex items-center justify-center text-sm font-bold">1</div>
+                  <div>
+                    <h4 className="font-semibold mb-2">Open in Browser</h4>
+                    <p className="text-gray-400">Visit cellarfi.com on your mobile browser</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start space-x-4">
+                  <div className="w-8 h-8 bg-cellar-cyan rounded-full flex items-center justify-center text-sm font-bold">2</div>
+                  <div>
+                    <h4 className="font-semibold mb-2">Tap Share Button</h4>
+                    <p className="text-gray-400">Find the share/menu button in your browser</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start space-x-4">
+                  <div className="w-8 h-8 bg-cellar-cyan rounded-full flex items-center justify-center text-sm font-bold">3</div>
+                  <div>
+                    <h4 className="font-semibold mb-2">Add to Home Screen</h4>
+                    <p className="text-gray-400">Select "Add to Home Screen" option</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start space-x-4">
+                  <div className="w-8 h-8 bg-cellar-cyan rounded-full flex items-center justify-center text-sm font-bold">4</div>
+                  <div>
+                    <h4 className="font-semibold mb-2">Launch Like Native App</h4>
+                    <p className="text-gray-400">Tap the Cellar icon on your home screen anytime</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="mt-8 p-6 glass-morphism rounded-xl">
+                <div className="flex items-center space-x-3 mb-3">
+                  <Home className="w-5 h-5 text-cellar-cyan" />
+                  <span className="font-semibold text-cellar-cyan">Pro Tip</span>
+                </div>
+                <p className="text-sm text-gray-300">
+                  The web app works offline for basic wallet functions and syncs when you're back online.
+                  Perfect for checking balances on the go!
+                </p>
+              </div>
+            </motion.div>
+            
+            <motion.div
+              className="relative"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <div className="relative max-w-sm mx-auto">
+                <img 
+                  src={homeScreenImage} 
+                  alt="Mobile home screen with dapp shortcuts"
+                  className="rounded-3xl shadow-2xl border border-gray-600"
+                />
+                <div className="absolute -bottom-4 -right-4 bg-cellar-cyan rounded-full p-3">
+                  <Plus className="w-6 h-6 text-white" />
+                </div>
+              </div>
+              
+              <div className="mt-6 text-center">
+                <p className="text-sm text-gray-400">
+                  Cellar icon alongside your favorite apps
+                </p>
+              </div>
+            </motion.div>
+          </div>
+          
+          <motion.div 
+            className="max-w-4xl mx-auto mt-16 grid md:grid-cols-3 gap-6"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            <div className="glass-morphism rounded-xl p-6 text-center">
+              <Zap className="w-8 h-8 text-cellar-cyan mx-auto mb-3" />
+              <h4 className="font-semibold mb-2">Instant Launch</h4>
+              <p className="text-sm text-gray-400">Opens directly without browser navigation</p>
+            </div>
+            
+            <div className="glass-morphism rounded-xl p-6 text-center">
+              <Shield className="w-8 h-8 text-cellar-cyan mx-auto mb-3" />
+              <h4 className="font-semibold mb-2">Secure Access</h4>
+              <p className="text-sm text-gray-400">Same security as native apps with PWA technology</p>
+            </div>
+            
+            <div className="glass-morphism rounded-xl p-6 text-center">
+              <Download className="w-8 h-8 text-cellar-cyan mx-auto mb-3" />
+              <h4 className="font-semibold mb-2">No App Store</h4>
+              <p className="text-sm text-gray-400">Works without Play Store installation</p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Testimonials */}
       <section className="py-20 bg-gradient-to-r from-cellar-navy to-cellar-navy-light">
         <div className="container mx-auto px-6">
@@ -447,10 +584,17 @@ export default function DownloadPage() {
                     <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                <p className="text-gray-300 mb-4 italic">"{testimonial.comment}"</p>
-                <div>
-                  <div className="font-semibold">{testimonial.name}</div>
-                  <div className="text-sm text-gray-400">{testimonial.role}</div>
+                <p className="text-gray-300 mb-6 italic">"{testimonial.comment}"</p>
+                <div className="flex items-center space-x-3">
+                  <img 
+                    src={testimonial.avatar} 
+                    alt={testimonial.name}
+                    className="w-12 h-12 rounded-full object-cover border-2 border-cellar-cyan"
+                  />
+                  <div>
+                    <div className="font-semibold">{testimonial.name}</div>
+                    <div className="text-sm text-gray-400">{testimonial.role}</div>
+                  </div>
                 </div>
               </motion.div>
             ))}
