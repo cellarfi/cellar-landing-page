@@ -3,7 +3,7 @@ import { Link } from "wouter";
 import { ArrowLeft, Download, Smartphone, Shield, Zap, Users, CheckCircle, Star, FileDown, Calendar, Info, Home, Plus, Share } from "lucide-react";
 import { motion } from "framer-motion";
 import { useToast } from "@/hooks/use-toast";
-import PhoneMockup from "@/components/phone-mockup";
+import appScreenshot from "@assets/Screenshot_1753983467_1753983497597.png";
 import homeScreenImage from "@assets/image_1753983161645.png";
 
 export default function DownloadPage() {
@@ -199,7 +199,14 @@ export default function DownloadPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="flex justify-center"
           >
-            <PhoneMockup />
+            <div className="relative max-w-sm">
+              <img 
+                src={appScreenshot} 
+                alt="Cellar Solana Wallet App Interface"
+                className="rounded-3xl shadow-2xl border border-gray-600 hover-lift"
+              />
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-cellar-cyan/20 to-transparent pointer-events-none"></div>
+            </div>
           </motion.div>
         </div>
       </section>

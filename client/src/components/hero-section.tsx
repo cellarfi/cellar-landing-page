@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Download, Play } from "lucide-react";
 import { Link } from "wouter";
-import PhoneMockup from "./phone-mockup";
+import appScreenshot from "@assets/Screenshot_1753983467_1753983497597.png";
 
 export default function HeroSection() {
   const scrollToDownload = () => {
@@ -74,13 +74,21 @@ export default function HeroSection() {
               </motion.button>
             </motion.div>
             
-            {/* Phone Mockup */}
+            {/* App Screenshot */}
             <motion.div
+              className="max-w-sm mx-auto"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.6 }}
             >
-              <PhoneMockup />
+              <div className="relative">
+                <img 
+                  src={appScreenshot} 
+                  alt="Cellar Solana Wallet App Interface"
+                  className="rounded-3xl shadow-2xl border border-gray-600 mx-auto hover-lift"
+                />
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-cellar-cyan/20 to-transparent pointer-events-none"></div>
+              </div>
             </motion.div>
           </motion.div>
         </div>
