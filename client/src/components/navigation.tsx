@@ -43,6 +43,12 @@ export default function Navigation() {
             >
               Features
             </button>
+            <button 
+              onClick={() => scrollToSection('rewards')}
+              className="text-white hover:text-cellar-cyan transition-colors duration-300"
+            >
+              Rewards
+            </button>
             <Link 
               href="/download"
               className="text-white hover:text-cellar-cyan transition-colors duration-300"
@@ -95,6 +101,12 @@ export default function Navigation() {
                   className="block text-white hover:text-cellar-cyan transition-colors duration-300"
                 >
                   Features
+                </button>
+                <button 
+                  onClick={() => scrollToSection('rewards')}
+                  className="block text-white hover:text-cellar-cyan transition-colors duration-300"
+                >
+                  Rewards
                 </button>
                 <Link 
                   href="/download"
