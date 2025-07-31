@@ -1,19 +1,72 @@
 import { useState } from "react";
 import { Link } from "wouter";
-import { ArrowLeft, Download, Smartphone, Shield, Zap, Users, CheckCircle, Star } from "lucide-react";
+import { ArrowLeft, Download, Smartphone, Shield, Zap, Users, CheckCircle, Star, FileDown, Calendar, Info } from "lucide-react";
 import { motion } from "framer-motion";
 import { useToast } from "@/hooks/use-toast";
 import PhoneMockup from "@/components/phone-mockup";
 
 export default function DownloadPage() {
   const [email, setEmail] = useState("");
+  const [selectedVersion, setSelectedVersion] = useState("latest");
   const { toast } = useToast();
 
-  const handleDownload = () => {
-    toast({
-      title: "Download Starting Soon!",
-      description: "Cellar for Android will be available soon. We'll notify you when it's ready.",
-    });
+  const versions = [
+    {
+      id: "latest",
+      version: "1.2.0",
+      date: "2024-01-15",
+      size: "28.5 MB",
+      description: "Latest stable release with enhanced security and social features",
+      changes: [
+        "Improved social-fi token discovery",
+        "Enhanced wallet security protocols", 
+        "Bug fixes and performance improvements",
+        "New trending tokens widget"
+      ],
+      downloadUrl: "#", // Replace with actual APK URL
+      isRecommended: true
+    },
+    {
+      id: "beta",
+      version: "1.3.0-beta",
+      date: "2024-01-20",
+      size: "29.1 MB", 
+      description: "Beta release with experimental features",
+      changes: [
+        "New DeFi integration features",
+        "Advanced portfolio analytics",
+        "Experimental NFT gallery",
+        "Performance optimizations"
+      ],
+      downloadUrl: "#", // Replace with actual APK URL
+      isRecommended: false
+    },
+    {
+      id: "stable",
+      version: "1.1.5",
+      date: "2024-01-10",
+      size: "27.8 MB",
+      description: "Previous stable release",
+      changes: [
+        "Core wallet functionality",
+        "Basic social features",
+        "Email authentication",
+        "Initial Solana integration"
+      ],
+      downloadUrl: "#", // Replace with actual APK URL
+      isRecommended: false
+    }
+  ];
+
+  const handleDownload = (versionId: string) => {
+    const version = versions.find(v => v.id === versionId);
+    if (version) {
+      // In a real app, this would trigger the actual download
+      toast({
+        title: "Download Started!",
+        description: `Downloading Cellar ${version.version} (${version.size})`,
+      });
+    }
   };
 
   const handleNotifyMe = (e: React.FormEvent) => {
@@ -100,16 +153,16 @@ export default function DownloadPage() {
             
             <div className="space-y-4 mb-8">
               <motion.button 
-                onClick={handleDownload}
+                onClick={() => handleDownload(selectedVersion)}
                 className="w-full sm:w-auto bg-gradient-to-r from-cellar-cyan to-cellar-cyan-light text-white px-8 py-4 rounded-xl text-lg font-semibold hover-lift animate-glow"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <Download className="w-6 h-6 mr-3 inline" />
-                Download for Android
+                Download APK ({versions.find(v => v.id === selectedVersion)?.version})
               </motion.button>
               <p className="text-sm text-gray-400">
-                Coming soon to Google Play Store
+                Direct APK download • Not on Play Store yet
               </p>
             </div>
 
@@ -136,6 +189,115 @@ export default function DownloadPage() {
             className="flex justify-center"
           >
             <PhoneMockup />
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Version Selection Section */}
+      <section className="py-20 bg-gradient-to-r from-cellar-navy-light to-cellar-navy">
+        <div className="container mx-auto px-6">
+          <motion.h2 
+            className="text-3xl md:text-4xl font-bold text-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            Choose Your Version
+          </motion.h2>
+          
+          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {versions.map((version, index) => (
+              <motion.div
+                key={version.id}
+                className={`glass-morphism rounded-2xl p-6 cursor-pointer transition-all duration-300 ${
+                  selectedVersion === version.id 
+                    ? 'ring-2 ring-cellar-cyan bg-cellar-cyan bg-opacity-5' 
+                    : 'hover:bg-white hover:bg-opacity-5'
+                } ${version.isRecommended ? 'relative' : ''}`}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.02 }}
+                onClick={() => setSelectedVersion(version.id)}
+              >
+                {version.isRecommended && (
+                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-cellar-cyan to-cellar-cyan-light text-white px-4 py-1 rounded-full text-sm font-semibold">
+                    Recommended
+                  </div>
+                )}
+                
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center space-x-3">
+                    <div className={`w-4 h-4 rounded-full border-2 ${
+                      selectedVersion === version.id 
+                        ? 'bg-cellar-cyan border-cellar-cyan' 
+                        : 'border-gray-400'
+                    }`}></div>
+                    <h3 className="text-xl font-bold">v{version.version}</h3>
+                  </div>
+                  <div className="text-sm text-gray-400 flex items-center">
+                    <Calendar className="w-4 h-4 mr-1" />
+                    {version.date}
+                  </div>
+                </div>
+                
+                <p className="text-gray-300 mb-4">{version.description}</p>
+                
+                <div className="space-y-2 mb-4">
+                  <div className="text-sm font-semibold text-cellar-cyan">What's New:</div>
+                  <ul className="text-sm text-gray-400 space-y-1">
+                    {version.changes.slice(0, 3).map((change, idx) => (
+                      <li key={idx} className="flex items-start">
+                        <CheckCircle className="w-3 h-3 text-cellar-cyan mt-0.5 mr-2 flex-shrink-0" />
+                        {change}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <div className="flex justify-between items-center pt-4 border-t border-gray-600">
+                  <div className="text-sm text-gray-400">Size: {version.size}</div>
+                  <motion.button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleDownload(version.id);
+                    }}
+                    className="px-4 py-2 bg-gradient-to-r from-cellar-cyan to-cellar-cyan-light text-white rounded-lg text-sm font-semibold hover-lift"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <FileDown className="w-4 h-4 mr-2 inline" />
+                    Download
+                  </motion.button>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+          
+          <motion.div 
+            className="max-w-4xl mx-auto mt-12 glass-morphism rounded-2xl p-6"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            <div className="flex items-start space-x-3">
+              <Info className="w-5 h-5 text-cellar-cyan mt-0.5 flex-shrink-0" />
+              <div>
+                <h3 className="text-lg font-semibold mb-2">Installation Instructions</h3>
+                <ol className="text-gray-300 space-y-2 text-sm">
+                  <li>1. Download the APK file to your Android device</li>
+                  <li>2. Go to Settings → Security → Enable "Unknown Sources" or "Install from Unknown Sources"</li>
+                  <li>3. Open the downloaded APK file and follow the installation prompts</li>
+                  <li>4. Launch Cellar and sign up with your email address</li>
+                </ol>
+                <p className="text-xs text-gray-400 mt-4">
+                  Note: You may need to temporarily disable Google Play Protect during installation.
+                </p>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -210,6 +372,15 @@ export default function DownloadPage() {
                     <span className="text-gray-300">{requirement}</span>
                   </motion.div>
                 ))}
+              </div>
+              
+              <div className="mt-6 p-4 bg-cellar-navy-light rounded-xl">
+                <h4 className="text-sm font-semibold text-cellar-cyan mb-2">APK Installation Requirements:</h4>
+                <ul className="text-sm text-gray-400 space-y-1">
+                  <li>• Enable "Unknown Sources" in device settings</li>
+                  <li>• Allow installation from external sources</li>
+                  <li>• Temporarily disable Google Play Protect if needed</li>
+                </ul>
               </div>
             </motion.div>
 
