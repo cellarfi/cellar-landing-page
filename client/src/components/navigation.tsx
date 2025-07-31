@@ -67,7 +67,7 @@ export default function Navigation() {
           <div className="flex items-center space-x-4">
             <Link 
               href="/download"
-              className="hidden md:block px-6 py-2 bg-gradient-to-r from-cellar-cyan to-cellar-cyan-light text-white rounded-lg hover:shadow-lg transition-all duration-300"
+              className="hidden md:block px-6 py-2 bg-gradient-to-r from-cellar-cyan/80 to-cellar-cyan-light/80 text-white rounded-lg hover:shadow-lg transition-all duration-300 border border-cellar-cyan/30"
             >
               Get Started
             </Link>
@@ -123,7 +123,7 @@ export default function Navigation() {
                 </button>
                 <Link 
                   href="/download"
-                  className="w-full px-6 py-2 bg-gradient-to-r from-cellar-cyan to-cellar-cyan-light text-white rounded-lg block text-center"
+                  className="w-full px-6 py-2 bg-gradient-to-r from-cellar-cyan/80 to-cellar-cyan-light/80 text-white rounded-lg block text-center border border-cellar-cyan/30"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Get Started

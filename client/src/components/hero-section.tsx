@@ -56,7 +56,7 @@ export default function HeroSection() {
             >
               <Link href="/download">
                 <motion.div 
-                  className="px-8 py-4 bg-gradient-to-r from-cellar-cyan to-cellar-cyan-light text-white rounded-xl text-lg font-semibold hover-lift animate-glow inline-block"
+                  className="px-8 py-4 bg-gradient-to-r from-cellar-cyan/80 to-cellar-cyan-light/80 text-white rounded-xl text-lg font-semibold hover-lift inline-block border border-cellar-cyan/30"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >

@@ -165,7 +165,7 @@ export default function DownloadPage() {
             <div className="space-y-4 mb-8">
               <motion.button 
                 onClick={() => handleDownload(selectedVersion)}
-                className="w-full sm:w-auto bg-gradient-to-r from-cellar-cyan to-cellar-cyan-light text-white px-8 py-4 rounded-xl text-lg font-semibold hover-lift animate-glow"
+                className="w-full sm:w-auto bg-gradient-to-r from-cellar-cyan/80 to-cellar-cyan-light/80 text-white px-8 py-4 rounded-xl text-lg font-semibold hover-lift border border-cellar-cyan/30"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -282,7 +282,7 @@ export default function DownloadPage() {
                       e.stopPropagation();
                       handleDownload(version.id);
                     }}
-                    className="px-4 py-2 bg-gradient-to-r from-cellar-cyan to-cellar-cyan-light text-white rounded-lg text-sm font-semibold hover-lift"
+                    className="px-4 py-2 bg-gradient-to-r from-cellar-cyan/80 to-cellar-cyan-light/80 text-white rounded-lg text-sm font-semibold hover-lift border border-cellar-cyan/30"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >

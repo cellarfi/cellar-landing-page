@@ -41,7 +41,7 @@ export default function DownloadSection() {
         >
           <Link href="/download">
             <motion.div 
-              className="bg-gradient-to-r from-cellar-cyan to-cellar-cyan-light rounded-2xl p-1 hover-lift cursor-pointer"
+              className="bg-gradient-to-r from-cellar-cyan/60 to-cellar-cyan-light/60 rounded-2xl p-1 hover-lift cursor-pointer border border-cellar-cyan/30"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -57,7 +57,7 @@ export default function DownloadSection() {
           
           <Link href="/download">
             <motion.div 
-              className="bg-gradient-to-r from-cellar-cyan to-cellar-cyan-light rounded-2xl p-1 hover-lift cursor-pointer"
+              className="bg-gradient-to-r from-cellar-cyan/60 to-cellar-cyan-light/60 rounded-2xl p-1 hover-lift cursor-pointer border border-cellar-cyan/30"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
