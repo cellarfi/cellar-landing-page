@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Apple, Smartphone, Lock, Zap } from "lucide-react";
+import { Link } from "wouter";
 import { useToast } from "@/hooks/use-toast";
 
 export default function DownloadSection() {
@@ -38,35 +39,37 @@ export default function DownloadSection() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <motion.div 
-            className="bg-gradient-to-r from-cellar-cyan to-cellar-cyan-light rounded-2xl p-1 hover-lift cursor-pointer"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => handleDownload('iOS')}
-          >
-            <div className="bg-cellar-navy rounded-2xl px-8 py-4 flex items-center space-x-4">
-              <Apple className="w-8 h-8" />
-              <div className="text-left">
-                <div className="text-sm text-gray-400">Download for</div>
-                <div className="text-lg font-semibold">iOS</div>
+          <Link href="/download">
+            <motion.div 
+              className="bg-gradient-to-r from-cellar-cyan to-cellar-cyan-light rounded-2xl p-1 hover-lift cursor-pointer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <div className="bg-cellar-navy rounded-2xl px-8 py-4 flex items-center space-x-4">
+                <Apple className="w-8 h-8" />
+                <div className="text-left">
+                  <div className="text-sm text-gray-400">Download for</div>
+                  <div className="text-lg font-semibold">iOS</div>
+                </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </Link>
           
-          <motion.div 
-            className="bg-gradient-to-r from-cellar-cyan to-cellar-cyan-light rounded-2xl p-1 hover-lift cursor-pointer"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => handleDownload('Android')}
-          >
-            <div className="bg-cellar-navy rounded-2xl px-8 py-4 flex items-center space-x-4">
-              <Smartphone className="w-8 h-8" />
-              <div className="text-left">
-                <div className="text-sm text-gray-400">Download for</div>
-                <div className="text-lg font-semibold">Android</div>
+          <Link href="/download">
+            <motion.div 
+              className="bg-gradient-to-r from-cellar-cyan to-cellar-cyan-light rounded-2xl p-1 hover-lift cursor-pointer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <div className="bg-cellar-navy rounded-2xl px-8 py-4 flex items-center space-x-4">
+                <Smartphone className="w-8 h-8" />
+                <div className="text-left">
+                  <div className="text-sm text-gray-400">Download for</div>
+                  <div className="text-lg font-semibold">Android</div>
+                </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </Link>
         </motion.div>
         
         <motion.div 

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Download, Play } from "lucide-react";
+import { Link } from "wouter";
 import PhoneMockup from "./phone-mockup";
 
 export default function HeroSection() {
@@ -53,15 +54,16 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <motion.button 
-                onClick={scrollToDownload}
-                className="px-8 py-4 bg-gradient-to-r from-cellar-cyan to-cellar-cyan-light text-white rounded-xl text-lg font-semibold hover-lift animate-glow"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Download className="w-5 h-5 mr-2 inline" />
-                Download Now
-              </motion.button>
+              <Link href="/download">
+                <motion.div 
+                  className="px-8 py-4 bg-gradient-to-r from-cellar-cyan to-cellar-cyan-light text-white rounded-xl text-lg font-semibold hover-lift animate-glow inline-block"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Download className="w-5 h-5 mr-2 inline" />
+                  Download Now
+                </motion.div>
+              </Link>
               <motion.button 
                 className="px-8 py-4 glass-morphism text-white rounded-xl text-lg font-semibold hover-lift"
                 whileHover={{ scale: 1.05 }}

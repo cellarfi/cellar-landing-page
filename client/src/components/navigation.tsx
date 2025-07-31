@@ -43,12 +43,12 @@ export default function Navigation() {
             >
               Features
             </button>
-            <button 
-              onClick={() => scrollToSection('download')}
+            <Link 
+              href="/download"
               className="text-white hover:text-cellar-cyan transition-colors duration-300"
             >
               Download
-            </button>
+            </Link>
             <button 
               onClick={() => scrollToSection('about')}
               className="text-white hover:text-cellar-cyan transition-colors duration-300"
@@ -59,12 +59,12 @@ export default function Navigation() {
           
           {/* Desktop CTA */}
           <div className="flex items-center space-x-4">
-            <button 
-              onClick={() => scrollToSection('download')}
+            <Link 
+              href="/download"
               className="hidden md:block px-6 py-2 bg-gradient-to-r from-cellar-cyan to-cellar-cyan-light text-white rounded-lg hover:shadow-lg transition-all duration-300"
             >
               Get Started
-            </button>
+            </Link>
             <button 
               className="md:hidden text-cellar-cyan"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -96,24 +96,26 @@ export default function Navigation() {
                 >
                   Features
                 </button>
-                <button 
-                  onClick={() => scrollToSection('download')}
+                <Link 
+                  href="/download"
                   className="block text-white hover:text-cellar-cyan transition-colors duration-300"
+                  onClick={() => setMobileMenuOpen(false)}
                 >
                   Download
-                </button>
+                </Link>
                 <button 
                   onClick={() => scrollToSection('about')}
                   className="block text-white hover:text-cellar-cyan transition-colors duration-300"
                 >
                   About
                 </button>
-                <button 
-                  onClick={() => scrollToSection('download')}
-                  className="w-full px-6 py-2 bg-gradient-to-r from-cellar-cyan to-cellar-cyan-light text-white rounded-lg"
+                <Link 
+                  href="/download"
+                  className="w-full px-6 py-2 bg-gradient-to-r from-cellar-cyan to-cellar-cyan-light text-white rounded-lg block text-center"
+                  onClick={() => setMobileMenuOpen(false)}
                 >
                   Get Started
-                </button>
+                </Link>
               </div>
             </motion.div>
           )}
