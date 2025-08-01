@@ -89,7 +89,7 @@ export default function Terms() {
 
           <div className='bg-cellar-navy-light rounded-2xl p-8 mb-8'>
             <p className='text-gray-300 mb-6'>
-              <strong>Effective Date:</strong> January 1, 2024
+              <strong>Effective Date:</strong> August 1, 2025
             </p>
             <p className='text-gray-300'>
               Welcome to Cellar. These Terms and Conditions govern your use of
@@ -117,9 +117,11 @@ export default function Terms() {
                   <p className='text-gray-300 mb-4'>{section.description}</p>
                 )}
                 {section.list && (
-                  <ul className='space-y-3 text-gray-300'>
+                  <ul className='space-y-3 text-gray-300 list-disc list-inside'>
                     {section.list.map((item, itemIndex) => (
-                      <li key={itemIndex}>{item}</li>
+                      <li key={itemIndex} className='leading-relaxed'>
+                        {item}
+                      </li>
                     ))}
                   </ul>
                 )}

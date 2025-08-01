@@ -147,22 +147,22 @@ export default function Footer() {
                   Terms of Service
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <a
                   href='#'
                   className='text-gray-400 hover:text-white transition-colors duration-300'
                 >
                   Cookie Policy
                 </a>
-              </li>
-              <li>
+              </li> */}
+              {/* <li>
                 <a
                   href='#'
                   className='text-gray-400 hover:text-white transition-colors duration-300'
                 >
                   Disclaimer
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>

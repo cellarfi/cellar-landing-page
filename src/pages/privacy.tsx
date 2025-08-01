@@ -76,7 +76,6 @@ export default function Privacy() {
         'Request correction of inaccurate data',
         'Delete your account and associated data',
         'Opt-out of non-essential communications',
-        'Export your wallet data',
       ],
     },
   ]
@@ -103,7 +102,7 @@ export default function Privacy() {
 
           <div className='bg-cellar-navy-light rounded-2xl p-8 mb-8'>
             <p className='text-gray-300 mb-6'>
-              <strong>Effective Date:</strong> January 1, 2024
+              <strong>Effective Date:</strong> August 1, 2025
             </p>
             <p className='text-gray-300'>
               At Cellar, we are committed to protecting your privacy and
