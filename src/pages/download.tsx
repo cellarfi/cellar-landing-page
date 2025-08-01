@@ -7,7 +7,6 @@ import {
   CheckCircle,
   Download,
   FileDown,
-  Home,
   Info,
   Plus,
   Shield,
@@ -513,7 +512,7 @@ export default function DownloadPage() {
                 </div>
               </div>
 
-              <div className='mt-8 p-6 glass-morphism rounded-xl'>
+              {/* <div className='mt-8 p-6 glass-morphism rounded-xl'>
                 <div className='flex items-center space-x-3 mb-3'>
                   <Home className='w-5 h-5 text-cellar-cyan' />
                   <span className='font-semibold text-cellar-cyan'>
@@ -525,7 +524,7 @@ export default function DownloadPage() {
                   when you're back online. Perfect for checking balances on the
                   go!
                 </p>
-              </div>
+              </div> */}
             </motion.div>
 
             <motion.div
