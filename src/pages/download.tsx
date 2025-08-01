@@ -11,7 +11,6 @@ import {
   Plus,
   Shield,
   Smartphone,
-  Star,
   Users,
   Zap,
 } from 'lucide-react'
@@ -415,7 +414,7 @@ export default function DownloadPage() {
               <div className='space-y-4'>
                 <div className='flex justify-between'>
                   <span className='text-gray-300'>App Size:</span>
-                  <span className='text-white font-medium'>~25MB</span>
+                  <span className='text-white font-medium'>~120MB</span>
                 </div>
                 <div className='flex justify-between'>
                   <span className='text-gray-300'>Last Updated:</span>
@@ -588,7 +587,7 @@ export default function DownloadPage() {
       </section>
 
       {/* Testimonials */}
-      <section className='py-20 bg-gradient-to-r from-cellar-navy to-cellar-navy-light'>
+      {/* <section className='py-20 bg-gradient-to-r from-cellar-navy to-cellar-navy-light'>
         <div className='container mx-auto px-6'>
           <motion.h2
             className='text-3xl md:text-4xl font-bold text-center mb-12'
@@ -639,7 +638,7 @@ export default function DownloadPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Notify Me Section */}
       <section className='py-20'>

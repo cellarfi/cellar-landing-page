@@ -1,4 +1,4 @@
-import { SiDiscord, SiGithub, SiTelegram, SiX } from 'react-icons/si'
+import { SiTelegram, SiX } from 'react-icons/si'
 import { Link } from 'wouter'
 
 export default function Footer() {
@@ -16,29 +16,31 @@ export default function Footer() {
             </p>
             <div className='flex space-x-4'>
               <a
-                href='#'
+                href='https://x.com/cellar_fi'
+                target='_blank'
+                rel='noopener noreferrer'
                 className='text-gray-400 hover:text-cellar-cyan transition-colors duration-300'
               >
                 <SiX className='w-5 h-5' />
               </a>
-              <a
+              {/* <a
                 href='#'
                 className='text-gray-400 hover:text-cellar-cyan transition-colors duration-300'
               >
                 <SiDiscord className='w-5 h-5' />
-              </a>
+              </a> */}
               <a
                 href='#'
                 className='text-gray-400 hover:text-cellar-cyan transition-colors duration-300'
               >
                 <SiTelegram className='w-5 h-5' />
               </a>
-              <a
+              {/* <a
                 href='#'
                 className='text-gray-400 hover:text-cellar-cyan transition-colors duration-300'
               >
                 <SiGithub className='w-5 h-5' />
-              </a>
+              </a> */}
             </div>
           </div>
 

@@ -8,9 +8,13 @@ import Terms from '@/pages/terms'
 import { QueryClientProvider } from '@tanstack/react-query'
 import { Analytics } from '@vercel/analytics/react'
 import { Route, Switch } from 'wouter'
+import { useScrollToTop } from './hooks/use-scroll-to-top'
 import { queryClient } from './lib/queryClient'
 
 function Router() {
+  // Add scroll to top behavior
+  useScrollToTop()
+
   return (
     <Switch>
       <Route path='/' component={Landing} />

@@ -17,7 +17,7 @@
     "id": "beta",
     "version": "1.0.1-beta",
     "date": "2025-07-28",
-    "size": "29.1 MB",
+    "size": "100.1 MB",
     "description": "Beta release with experimental features",
     "changes": [
       "New DeFi integration features",
@@ -32,7 +32,7 @@
     "id": "stable",
     "version": "1.0.0-beta",
     "date": "2025-07-28",
-    "size": "27.8 MB",
+    "size": "77.8 MB",
     "description": "Previous stable release",
     "changes": [
       "Core wallet functionality",
