@@ -1,3 +1,4 @@
+import Footer from '@/components/footer'
 import { useToast } from '@/hooks/use-toast'
 import versions from '@/versions.json'
 import { motion } from 'framer-motion'
@@ -686,6 +687,8 @@ export default function DownloadPage() {
           </motion.div>
         </div>
       </section>
+
+      <Footer />
     </div>
   )
 }
