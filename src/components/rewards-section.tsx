@@ -73,7 +73,7 @@ export default function RewardsSection() {
                 </h3>
                 <div className='flex items-center space-x-2'>
                   <img
-                    src={'/rewards.png'}
+                    src={'/reward-bar.jpeg'}
                     alt='Rewards points'
                     className='h-6'
                   />
