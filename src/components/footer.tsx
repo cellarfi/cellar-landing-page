@@ -169,7 +169,8 @@ export default function Footer() {
 
         <div className='border-t border-gray-700 pt-8 mt-8 text-center'>
           <p className='text-gray-400'>
-            © 2024 Cellar. All rights reserved. Built for the Solana ecosystem.
+            © {new Date().getFullYear()} Cellar. All rights reserved. Built for
+            the Solana ecosystem.
           </p>
         </div>
       </div>

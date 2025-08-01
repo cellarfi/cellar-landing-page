@@ -127,7 +127,7 @@ export default function Privacy() {
                 {section.description && (
                   <p className='text-gray-300 mb-4'>{section.description}</p>
                 )}
-                <ul className='space-y-3 text-gray-300'>
+                <ul className='space-y-3 text-gray-300 list-disc list-inside'>
                   {section.content.map((item, itemIndex) => (
                     <li key={itemIndex}>
                       {typeof item === 'string' ? (

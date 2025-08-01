@@ -83,20 +83,151 @@ export default function HeroSection() {
               </motion.button>
             </motion.div>
 
-            {/* App Screenshot */}
+            {/* Premium App Showcase */}
             <motion.div
-              className='max-w-sm mx-auto'
-              initial={{ opacity: 0, y: 50 }}
+              className='relative max-w-6xl mx-auto mt-16'
+              initial={{ opacity: 0, y: 80 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.6 }}
+              transition={{ duration: 1.2, delay: 0.6 }}
             >
-              <div className='relative'>
+              {/* Background Elements */}
+              <div className='absolute inset-0 bg-gradient-to-r from-cellar-cyan/5 via-transparent to-cellar-cyan/5 rounded-3xl blur-3xl'></div>
+
+              {/* Floating Elements */}
+              <div className='absolute -top-20 -left-20 w-40 h-40 bg-cellar-cyan/10 rounded-full blur-2xl animate-pulse'></div>
+              <div className='absolute -bottom-20 -right-20 w-60 h-60 bg-cellar-cyan-light/10 rounded-full blur-2xl animate-pulse delay-1000'></div>
+
+              {/* Main Content Container */}
+              <div className='relative flex flex-col lg:flex-row items-center justify-between gap-12 px-8'>
+                {/* Left Side - Features Preview */}
+                <motion.div
+                  className='flex flex-col space-y-6 lg:w-1/2'
+                  initial={{ opacity: 0, x: -50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: 0.8 }}
+                >
+                  <div className='glass-morphism rounded-2xl p-6 border border-cellar-cyan/20'>
+                    <div className='flex items-center space-x-3 mb-3'>
+                      <div className='w-3 h-3 bg-green-400 rounded-full animate-pulse'></div>
+                      <span className='text-sm text-cellar-cyan font-medium'>
+                        LIVE PORTFOLIO
+                      </span>
+                    </div>
+                    <div className='text-2xl font-bold text-white'>$61.52</div>
+                    <div className='text-sm text-gray-400'>+12.5% today</div>
+                  </div>
+
+                  <div className='glass-morphism rounded-2xl p-6 border border-cellar-cyan/20'>
+                    <div className='flex items-center space-x-3 mb-3'>
+                      <div className='w-8 h-8 bg-cellar-cyan/20 rounded-lg flex items-center justify-center'>
+                        <span className='text-cellar-cyan text-sm'>🍃</span>
+                      </div>
+                      <span className='text-sm text-cellar-cyan font-medium'>
+                        REWARDS EARNED
+                      </span>
+                    </div>
+                    <div className='text-xl font-bold text-white'>
+                      19.00 Points
+                    </div>
+                    <div className='text-sm text-gray-400'>Ready to redeem</div>
+                  </div>
+                </motion.div>
+
+                {/* Center - Premium Phone Mockup */}
                 <img
                   src={'/app.png'}
                   alt='Cellar Solana Wallet App Interface'
-                  className='rounded-3xl shadow-2xl border border-gray-600 mx-auto hover-lift'
+                  className='w-full h-auto lg:w-1/3 xl:w-[40%]'
                 />
-                <div className='absolute inset-0 rounded-3xl bg-gradient-to-t from-cellar-cyan/20 to-transparent pointer-events-none'></div>
+                <motion.div
+                  className='relative lg:w-1/3 hidden'
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 1, delay: 0.9 }}
+                >
+                  {/* Premium Frame Effect */}
+                  <div className='relative'>
+                    {/* Glow Ring */}
+                    <div className='absolute -inset-4 bg-gradient-to-r from-cellar-cyan/20 via-cellar-cyan-light/20 to-cellar-cyan/20 rounded-[3rem] blur-xl animate-pulse'></div>
+
+                    {/* Metallic Frame */}
+                    <div className='relative bg-gradient-to-b from-gray-700 via-gray-800 to-gray-900 p-0.5 rounded-[2.5rem] shadow-2xl border border-gray-600/50'>
+                      {/* Screen Bezel */}
+                      <div className='bg-black rounded-[2rem] p-0.5'>
+                        {/* Actual Screenshot */}
+                        <div className='relative overflow-hidden rounded-[1.5rem]'>
+                          <img
+                            src={'/app.png'}
+                            alt='Cellar Solana Wallet App Interface'
+                            className='w-full h-auto'
+                          />
+                          {/* Screen Reflection Effect */}
+                          <div className='absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent pointer-events-none rounded-[1.5rem]'></div>
+                        </div>
+                      </div>
+
+                      {/* Home Indicator */}
+                      <div className='absolute bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-white/30 rounded-full'></div>
+                    </div>
+
+                    {/* Floating UI Elements */}
+                    <motion.div
+                      className='absolute -top-8 -right-8 glass-morphism rounded-xl p-3 border border-cellar-cyan/30'
+                      animate={{ y: [-5, 5, -5] }}
+                      transition={{ duration: 3, repeat: Infinity }}
+                    >
+                      <span className='text-xs text-cellar-cyan font-semibold'>
+                        SECURE
+                      </span>
+                    </motion.div>
+
+                    <motion.div
+                      className='absolute -bottom-6 -left-6 glass-morphism rounded-xl p-3 border border-cellar-cyan/30'
+                      animate={{ y: [5, -5, 5] }}
+                      transition={{ duration: 4, repeat: Infinity, delay: 1 }}
+                    >
+                      <span className='text-xs text-cellar-cyan font-semibold'>
+                        NO SEEDS
+                      </span>
+                    </motion.div>
+                  </div>
+                </motion.div>
+
+                {/* Right Side - Social Features */}
+                <motion.div
+                  className='flex flex-col space-y-6 lg:w-1/2'
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: 1 }}
+                >
+                  <div className='glass-morphism rounded-2xl p-6 border border-cellar-cyan/20'>
+                    <div className='flex items-center space-x-3 mb-3'>
+                      <div className='w-8 h-8 bg-orange-500/20 rounded-lg flex items-center justify-center'>
+                        <span className='text-orange-400 text-sm'>🔥</span>
+                      </div>
+                      <span className='text-sm text-cellar-cyan font-medium'>
+                        TRENDING NOW
+                      </span>
+                    </div>
+                    <div className='text-lg font-bold text-white'>BONK</div>
+                    <div className='text-sm text-green-400'>+24.7% today</div>
+                  </div>
+
+                  <div className='glass-morphism rounded-2xl p-6 border border-cellar-cyan/20'>
+                    <div className='flex items-center space-x-3 mb-3'>
+                      <div className='w-8 h-8 bg-purple-500/20 rounded-lg flex items-center justify-center'>
+                        <span className='text-purple-400 text-sm'>👥</span>
+                      </div>
+                      <span className='text-sm text-cellar-cyan font-medium'>
+                        SOCIAL FEED
+                      </span>
+                    </div>
+                    <div className='text-sm text-white'>Share your wins</div>
+                    <div className='text-sm text-gray-400'>
+                      Connect with traders
+                    </div>
+                  </div>
+                </motion.div>
               </div>
             </motion.div>
           </motion.div>
