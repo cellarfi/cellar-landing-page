@@ -154,7 +154,7 @@ export default function DownloadPage() {
               </p>
             </div>
 
-            <div className='flex items-center space-x-6 text-sm text-gray-400'>
+            {/* <div className='flex items-center space-x-6 text-sm text-gray-400'>
               <div className='flex items-center space-x-2'>
                 <CheckCircle className='w-4 h-4 text-green-400' />
                 <span>100% Free</span>
@@ -167,7 +167,7 @@ export default function DownloadPage() {
                 <CheckCircle className='w-4 h-4 text-green-400' />
                 <span>Open Source</span>
               </div>
-            </div>
+            </div> */}
           </motion.div>
 
           <motion.div
