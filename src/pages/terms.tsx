@@ -128,7 +128,7 @@ export default function Terms() {
               </motion.div>
             ))}
 
-            <motion.div
+            {/* <motion.div
               className='glass-morphism rounded-2xl p-8'
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -149,7 +149,7 @@ export default function Terms() {
                   <strong>Support:</strong> support@cellarfi.com
                 </p>
               </div>
-            </motion.div>
+            </motion.div> */}
           </div>
         </motion.div>
       </div>
