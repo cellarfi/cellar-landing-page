@@ -1,6 +1,16 @@
 [
   {
     "id": "latest",
+    "version": "1.0.3-beta",
+    "date": "2025-08-05",
+    "size": "124.108 MB",
+    "description": "Latest beta release with enhanced security and social features",
+    "changes": ["Fixed social fi major issues"],
+    "downloadUrl": "https://static.53.190.27.37.clients.your-server.de/solana-app/v1.0.3-beta.apk",
+    "isRecommended": true
+  },
+  {
+    "id": "latest",
     "version": "1.0.2-beta",
     "date": "2025-08-01",
     "size": "121.7 MB",
@@ -10,8 +20,8 @@
       "Enhanced wallet security protocols",
       "Bug fixes and performance improvements"
     ],
-    "downloadUrl": "https://static.53.190.27.37.clients.your-server.de/solana-app/app-release-v1.0.2-beta.apk",
-    "isRecommended": true
+    "downloadUrl": "https://static.53.190.27.37.clients.your-server.de/solana-app/v1.0.2-beta.apk",
+    "isRecommended": false
   },
   {
     "id": "beta",

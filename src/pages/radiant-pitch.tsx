@@ -1,6 +1,5 @@
 import Footer from '@/components/footer'
 import Navigation from '@/components/navigation'
-
 export default function Landing() {
   return (
     <div className='min-h-screen'>
