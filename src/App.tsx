@@ -10,6 +10,7 @@ import { Analytics } from '@vercel/analytics/react'
 import { Route, Switch } from 'wouter'
 import { useScrollToTop } from './hooks/use-scroll-to-top'
 import { queryClient } from './lib/queryClient'
+import RadiantPitch from './pages/radiant-pitch'
 
 function Router() {
   // Add scroll to top behavior
@@ -21,6 +22,7 @@ function Router() {
       <Route path='/download' component={DownloadPage} />
       <Route path='/privacy' component={Privacy} />
       <Route path='/terms' component={Terms} />
+      <Route path='/radiant-demo' component={RadiantPitch} />
       <Route component={NotFound} />
     </Switch>
   )
