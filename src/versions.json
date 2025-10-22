@@ -1,13 +1,27 @@
 [
   {
     "id": "latest",
+    "version": "1.0.4-beta",
+    "date": "2025-08-05",
+    "size": "124.108 MB",
+    "description": "Latest beta release with enhanced security and social features",
+    "changes": [
+      "Fixed jupiter swap issues with native SOL",
+      "Fixed social fi major issues",
+      "Major performance improvements"
+    ],
+    "downloadUrl": "https://static.53.190.27.37.clients.your-server.de/solana-app/v1.0.4-beta.apk",
+    "isRecommended": true
+  },
+  {
+    "id": "latest",
     "version": "1.0.3-beta",
     "date": "2025-08-05",
     "size": "124.108 MB",
     "description": "Latest beta release with enhanced security and social features",
-    "changes": ["Fixed social fi major issues"],
+    "changes": ["Fixed social fi major issues", "Majour UI improvements"],
     "downloadUrl": "https://static.53.190.27.37.clients.your-server.de/solana-app/v1.0.3-beta.apk",
-    "isRecommended": true
+    "isRecommended": false
   },
   {
     "id": "latest",

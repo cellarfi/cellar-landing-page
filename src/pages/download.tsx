@@ -203,7 +203,7 @@ export default function DownloadPage() {
           <div className='grid md:grid-cols-3 gap-6 max-w-6xl mx-auto'>
             {versions.map((version, index) => (
               <motion.div
-                key={version.id}
+                key={version.version}
                 className={`glass-morphism rounded-2xl p-6 cursor-pointer transition-all duration-300 ${
                   selectedVersion === version.id
                     ? 'ring-2 ring-cellar-cyan bg-cellar-cyan bg-opacity-5'
