@@ -1,8 +1,21 @@
 [
   {
     "id": "latest",
+    "version": "v1.0.5-beta.apk",
+    "date": "2025-10-30",
+    "size": "124.108 MB",
+    "description": "Latest beta release with enhanced security and social features",
+    "changes": [
+      "Fixed browser broken page link",
+      "Added biometric authentication"
+    ],
+    "downloadUrl": "https://static.53.190.27.37.clients.your-server.de/solana-app/v1.0.4-beta.apk",
+    "isRecommended": true
+  },
+  {
+    "id": "latest",
     "version": "1.0.4-beta",
-    "date": "2025-08-05",
+    "date": "2025-09-05",
     "size": "124.108 MB",
     "description": "Latest beta release with enhanced security and social features",
     "changes": [
@@ -16,7 +29,7 @@
   {
     "id": "latest",
     "version": "1.0.3-beta",
-    "date": "2025-08-05",
+    "date": "2025-09-05",
     "size": "124.108 MB",
     "description": "Latest beta release with enhanced security and social features",
     "changes": ["Fixed social fi major issues", "Majour UI improvements"],

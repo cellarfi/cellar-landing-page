@@ -23,6 +23,7 @@ function Router() {
       <Route path='/privacy' component={Privacy} />
       <Route path='/terms' component={Terms} />
       <Route path='/radiant-demo' component={RadiantPitch} />
+      {/* <Route path='/pitch-video' component={RadiantPitch} /> */}
       <Route component={NotFound} />
     </Switch>
   )
