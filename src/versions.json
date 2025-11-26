@@ -1,6 +1,16 @@
 [
   {
     "id": "latest",
+    "version": "v1.0.6-beta.apk",
+    "date": "2025-11-26",
+    "size": "124.3 MB",
+    "description": "Latest beta release with enhanced security and social features",
+    "changes": ["Fixed shortcut browser broken page link"],
+    "downloadUrl": "https://static.53.190.27.37.clients.your-server.de/solana-app/v1.0.6-beta.apk",
+    "isRecommended": true
+  },
+  {
+    "id": "latest",
     "version": "v1.0.5-beta.apk",
     "date": "2025-10-30",
     "size": "124.108 MB",
