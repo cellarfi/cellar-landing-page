@@ -1,7 +1,9 @@
 import { Toaster } from '@/components/ui/toaster'
 import { TooltipProvider } from '@/components/ui/tooltip'
+import Copyright from '@/pages/copyright'
 import DownloadPage from '@/pages/download'
 import Landing from '@/pages/landing'
+import License from '@/pages/license'
 import NotFound from '@/pages/not-found'
 import Privacy from '@/pages/privacy'
 import Terms from '@/pages/terms'
@@ -22,6 +24,8 @@ function Router() {
       <Route path='/download' component={DownloadPage} />
       <Route path='/privacy' component={Privacy} />
       <Route path='/terms' component={Terms} />
+      <Route path='/copyright' component={Copyright} />
+      <Route path='/license' component={License} />
       <Route path='/radiant-demo' component={RadiantPitch} />
       {/* <Route path='/pitch-video' component={RadiantPitch} /> */}
       <Route component={NotFound} />
