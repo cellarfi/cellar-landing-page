@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.cellar.so",
+      "sha256_cert_fingerprints": [
+        "21:F1:E3:F7:76:B9:9F:7B:71:C5:22:C5:70:5F:49:73:E9:DE:0A:61:5A:22:E6:0B:FC:6F:E6:03:22:97:E5:26"
+      ]
+    }
+  }
+]
