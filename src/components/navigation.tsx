@@ -126,6 +126,13 @@ export default function Navigation() {
                   About
                 </button>
                 <Link
+                  href='/support'
+                  className='block text-white hover:text-cellar-cyan transition-colors duration-300'
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Support
+                </Link>
+                <Link
                   href='/download'
                   className='w-full px-6 py-2 bg-gradient-to-r from-cellar-cyan/80 to-cellar-cyan-light/80 text-white rounded-lg block text-center border border-cellar-cyan/30'
                   onClick={() => setMobileMenuOpen(false)}

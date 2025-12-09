@@ -13,6 +13,7 @@ import { Route, Switch } from 'wouter'
 import { useScrollToTop } from './hooks/use-scroll-to-top'
 import { queryClient } from './lib/queryClient'
 import RadiantPitch from './pages/radiant-pitch'
+import Support from './pages/support'
 
 function Router() {
   // Add scroll to top behavior
@@ -26,6 +27,7 @@ function Router() {
       <Route path='/terms' component={Terms} />
       <Route path='/copyright' component={Copyright} />
       <Route path='/license' component={License} />
+      <Route path='/support' component={Support} />
       <Route path='/radiant-demo' component={RadiantPitch} />
       {/* <Route path='/pitch-video' component={RadiantPitch} /> */}
       <Route component={NotFound} />
